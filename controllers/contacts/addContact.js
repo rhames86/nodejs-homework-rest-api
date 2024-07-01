@@ -8,8 +8,7 @@ const addContact = async (req, res) => {
   if (contact) {
     throw HttpError(409, "Contact already exists");
   }
-  const { _id: owner } = req.user;
-  const result = await Contact.create({ ...req.body, owner });
+  const result = await Contact.create({ ...req.body });
   res.status(201).json(result);
 };
 

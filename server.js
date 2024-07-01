@@ -7,10 +7,7 @@ const { DB_HOST, PORT = 3000 } = process.env;
 console.log("DB_HOST:", DB_HOST); // Verifica que esto imprima el URI correcto
 
 mongoose
-  .connect(DB_HOST, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(DB_HOST, {})
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running. Use our API on port: ${PORT}`);
